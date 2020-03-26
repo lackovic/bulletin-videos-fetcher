@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/lackovic/euronews/issues"
   },
-  "homepage": "https://github.com/lackovic/euronews#readme"
+  "homepage": "https://github.com/lackovic/euronews#readme",
+  "dependencies": {
+    "zombie": "^6.1.4"
+  }
 }

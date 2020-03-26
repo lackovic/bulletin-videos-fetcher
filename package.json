@@ -18,5 +18,8 @@
   "homepage": "https://github.com/lackovic/euronews#readme",
   "dependencies": {
     "zombie": "^6.1.4"
+  },
+  "devDependencies": {
+    "prettier": "2.0.2"
   }
 }

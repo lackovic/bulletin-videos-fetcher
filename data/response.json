@@ -1,0 +1,233 @@
+[
+  {
+    "id": 1059120,
+    "cid": 4593940,
+    "versionId": 1,
+    "archive": 0,
+    "housenumber": "200326_NWSU_11475741",
+    "owner": "euronews",
+    "isMagazine": 0,
+    "channels": [
+      { "id": 1 },
+      { "id": 2 },
+      { "id": 3 },
+      { "id": 4 },
+      { "id": 5 }
+    ],
+    "status": 2,
+    "title": "L\u0027esercito russo in aiuto dei medici italiani",
+    "titleSeo": null,
+    "titleListing1": "L\u0027esercito russo in aiuto dei medici italiani",
+    "titleListing2": " Una colonna militare di 22 automezzi del Ministero della Difesa russo arriva a Bergamo. Da questo gioved\u00ec, la citt\u00e0 diventa la sede del quartier generale italo-russo per la lotta contro il coronavirus #covid19 #covid19italia @mod_russia @euronewsfalco",
+    "leadin": " Una colonna militare di 22 automezzi del Ministero della Difesa russo arriva a Bergamo. Da questo gioved\u00ec, la citt\u00e0 diventa la sede del quartier generale italo-russo per la lotta contro il coronavirus",
+    "summary": " Una colonna militare di 22 automezzi del Ministero della Difesa russo arriva a Bergamo. Da questo gioved\u00ec, la citt\u00e0 diventa la sede del quartier generale italo-russo per la lotta contro il coronavirus",
+    "url": "l-esercito-russo-in-aiuto-dei-medici-italiani",
+    "masterCms": "v2",
+    "plainText": "Una colonna militare di 22 automezzi del Ministero della Difesa russo arriva a Bergamo. Da questo gioved\u00ec diventa la sede del quartier generale italo-russo per la lotta contro il coronavirus. \n\nOltre a 104 medici, il convoglio trasportava un laboratorio di analisi e diagnostica mobile, apparecchiature per la decontaminazione e igienizzanti. \n\nLa delegazione lavorer\u00e0 all\u0027ospedale da campo che stanno costruendo gli alpini. La missione ha aperto un dibattito in Russia. Sui social media si sottolinea l\u0027orgoglio russo, ma c\u0027\u00e8 anche chi sostiene si tratti di un\u0027iniziativa politica di Putin, che per\u00f2 non proclama l\u0027emergenza nel suo Paese. \n\n",
+    "htmlText": "\u003Cp\u003EUna colonna militare di 22 automezzi del Ministero della Difesa russo arriva a Bergamo. Da questo gioved\u00ec diventa la sede del quartier generale italo-russo per la lotta contro il coronavirus.\u003C/p\u003E\n\u003Cp\u003EOltre a 104 medici, il convoglio trasportava un laboratorio di analisi e diagnostica mobile, apparecchiature per la decontaminazione e igienizzanti.\u003C/p\u003E\n\u003Cdiv class=\u0022widget widget--type-tweet widget--size-fullwidth widget--align-center\u0022\u003E\n  \u003Cdiv class=\u0022widget__wrapper\u0022\u003E\n    \u003Cdiv class=\u0022widget__ratio widget__ratio\u2014auto\u0022\u003E\n      \u003Cdiv class=\u0022widget__contents\u0022\u003E\n        \u003Cfigure class=\u0022widget__figure\u0022\u003E\n          \u003Cdiv class=\u0022widget__tweet\u0022 data-tweet-id=\u00221242841283795787776\u0022\u003E\u003C/div\u003E\n        \u003C/figure\u003E\n      \u003C/div\u003E\n    \u003C/div\u003E\n  \u003C/div\u003E\n\u003C/div\u003E\n\n\n\u003Cp\u003ELa delegazione lavorer\u00e0 all\u0026#039;ospedale da campo che stanno costruendo gli alpini. La missione ha aperto un dibattito in Russia. Sui social media si sottolinea l\u0026#039;orgoglio russo, ma c\u0026#039;\u00e8 anche chi sostiene si tratti di un\u0026#039;iniziativa politica di Putin, che per\u00f2 non proclama l\u0026#039;emergenza nel suo Paese.\u003C/p\u003E\n\u003Cdiv class=\u0022widget widget--type-freeform\nwidget--size-fullwidth\nwidget--align-center\u0022\u003E\n  \u003Cdiv class=\u0022widget__wrapper\u0022\u003E\n    \u003Cdiv class=\u0022widget__ratio widget__ratio--auto\u0022\u003E\n      \u003Cdiv class=\u0022widget__contents\u0022\u003E\n         \u003Cscript id=\u0022infogram_0_9a90efea-e8e3-4554-998a-8d3048213dc5\u0022 title=\u0022Coronavirus cases in the world - ITA\u0022 src=\u0022https://e.infogram.com/js/dist/embed.js?sqi\u0022 type=\u0022text/javascript\u0022\u003E\u003C/script\u003E \n      \u003C/div\u003E\n    \u003C/div\u003E\n  \u003C/div\u003E\n\u003C/div\u003E\n\n\n",
+    "hashtag": null,
+    "createdAt": 1585230855,
+    "publishedAt": 1585247160,
+    "updatedAt": 1585250103,
+    "expiresAt": 0,
+    "canonical": "https://it.euronews.com/2020/03/26/l-esercito-russo-in-aiuto-dei-medici-italiani",
+    "images": [
+      {
+        "url": "https://static.euronews.com/articles/stories/04/59/39/48/{{w}}x{{h}}_cmsv2_49fb45f3-b66f-586f-91e8-db75afee68fb-4593948.jpg",
+        "altText": null,
+        "caption": null,
+        "captionCredit": "AP Photo/Luca Bruno",
+        "captionUrl": null,
+        "sourceCredit": null,
+        "sourceUrl": null,
+        "width": 4724,
+        "height": 3149
+      }
+    ],
+    "authors": {
+      "journalists": [
+        {
+          "urlSafeValue": "falco",
+          "title": "Salvatore Falco",
+          "twitter": "@euronewsfalco"
+        }
+      ],
+      "producers": [],
+      "videoEditor": []
+    },
+    "keywords": [
+      {
+        "id": 158,
+        "slug": "italy",
+        "urlSafeValue": "italia",
+        "title": "Italia",
+        "titleRaw": "Italia"
+      },
+      {
+        "id": 3250,
+        "slug": "bergamo",
+        "urlSafeValue": "bergamo",
+        "title": "Bergamo",
+        "titleRaw": "Bergamo"
+      },
+      {
+        "id": 22526,
+        "slug": "coronavirus",
+        "urlSafeValue": "coronavirus",
+        "title": "Coronavirus",
+        "titleRaw": "Coronavirus"
+      },
+      {
+        "id": 239,
+        "slug": "russia",
+        "urlSafeValue": "federazione-russa",
+        "title": "Russia",
+        "titleRaw": "Russia"
+      },
+      {
+        "id": 22728,
+        "slug": "covid-19",
+        "urlSafeValue": "covid-19",
+        "title": "Covid-19",
+        "titleRaw": "Covid-19"
+      }
+    ],
+    "widgets": [
+      { "slug": "twitter", "count": 1 },
+      { "slug": "html", "count": 1 }
+    ],
+    "related": [{ "id": 1057860 }, { "id": 1058012 }, { "id": 1058290 }],
+    "technicalTags": [],
+    "allViews": 0,
+    "allViewsMeta": {
+      "pointOfView": { "quotation": null, "description": null, "author": null },
+      "survey": [],
+      "tweetId": null,
+      "tweet2NdId": null,
+      "contentType": null,
+      "displayOverlay": 0
+    },
+    "displayType": "default",
+    "video": 1,
+    "videos": [
+      {
+        "duration": 75000,
+        "editor": null,
+        "filesizeBytes": 7358171,
+        "format": "mp4",
+        "youtubeId": "ANdaQ7qIZOo",
+        "type": "normal",
+        "url": "https://video.euronews.com/mp4/med/EN/NW/SU/20/03/26/it/200326_NWSU_11475741_11475822_75000_191033_it.mp4",
+        "expiresAt": 0,
+        "quality": "md"
+      },
+      {
+        "duration": 75000,
+        "editor": null,
+        "filesizeBytes": 12313802,
+        "format": "mp4",
+        "youtubeId": "ANdaQ7qIZOo",
+        "type": "normal",
+        "url": "https://video.euronews.com/mp4/EN/NW/SU/20/03/26/it/200326_NWSU_11475741_11475822_75000_191033_it.mp4",
+        "expiresAt": 0,
+        "quality": "hd"
+      }
+    ],
+    "liveStream": [{ "startDate": 0, "endDate": 0 }],
+    "isLiveCoverage": 0,
+    "scribbleLiveId": 0,
+    "scribbleLiveRibbon": 0,
+    "sourceId": 1,
+    "sources": [],
+    "freeField2": null,
+    "type": "",
+    "program": {
+      "id": "world",
+      "urlSafeValue": "mondo",
+      "title": "mondo",
+      "online": 1,
+      "url": "/programmi/mondo"
+    },
+    "vertical": "news",
+    "verticals": [
+      { "id": 1, "slug": "news", "urlSafeValue": "notizie", "title": "Notizie" }
+    ],
+    "primaryVertical": {
+      "id": 1,
+      "slug": "news",
+      "urlSafeValue": "notizie",
+      "title": "Notizie"
+    },
+    "themes": [
+      {
+        "id": 1,
+        "urlSafeValue": "news",
+        "title": "News",
+        "translation": "Mondo",
+        "url": "//it.euronews.com/notizie/internazionale"
+      }
+    ],
+    "primaryTheme": { "id": 1, "urlSafeValue": "news", "title": "News" },
+    "advertising": 0,
+    "advertisingData": {
+      "startDate": 0,
+      "endDate": 0,
+      "type": null,
+      "isDfp": null,
+      "slug": null,
+      "title": null,
+      "sponsor": null,
+      "sponsorName": null,
+      "sponsorUrl": null,
+      "sponsorLogo": "",
+      "sponsorLogoReverse": ""
+    },
+    "geoLocation": { "lat": 0, "lon": 0 },
+    "location": 0,
+    "continent": [],
+    "country": [],
+    "town": [],
+    "versions": {
+      "de": {
+        "url": "liebesgru-e-aus-russland-hilfe-aus-moskau-in-bergamo-eingetroffen",
+        "title": "\u0022Liebesgr\u00fc\u00dfe aus Russland\u0022: Hilfe aus Moskau in Bergamo eingetroffen",
+        "authors": { "journalists": [], "producers": [] },
+        "publishedAt": 1585248796,
+        "expiresAt": 0
+      },
+      "it": {
+        "url": "l-esercito-russo-in-aiuto-dei-medici-italiani",
+        "title": "L\u0027esercito russo in aiuto dei medici italiani",
+        "authors": {
+          "journalists": [
+            {
+              "urlSafeValue": "falco",
+              "title": "Salvatore Falco",
+              "twitter": "@euronewsfalco"
+            }
+          ],
+          "producers": []
+        },
+        "publishedAt": 1585247160,
+        "expiresAt": 0
+      },
+      "es": {
+        "url": "covid-19-un-convoy-con-medicos-rusos-llega-a-lombardia-para-contener-la-propagacion-del-vi",
+        "title": "COVID-19: un convoy con m\u00e9dicos rusos llega a Lombard\u00eda para contener la propagaci\u00f3n del virus",
+        "authors": { "journalists": [], "producers": [] },
+        "publishedAt": 1585248548,
+        "expiresAt": 0
+      },
+      "el": {
+        "url": "mpergamo-italia-eftase-rwsiki-voitheia-covid-19-koronoios",
+        "title": "\u039c\u03c0\u03ad\u03c1\u03b3\u03ba\u03b1\u03bc\u03bf: \u0388\u03c6\u03c4\u03b1\u03c3\u03b5 \u03b7 \u03c1\u03c9\u03c3\u03b9\u03ba\u03ae \u03b2\u03bf\u03ae\u03b8\u03b5\u03b9\u03b1",
+        "authors": { "journalists": [], "producers": [] },
+        "publishedAt": 1585245791,
+        "expiresAt": 0
+      }
+    },
+    "fullUrl": "/2020/03/26/l-esercito-russo-in-aiuto-dei-medici-italiani",
+    "lastModified": 1585250103,
+    "ampUrl": "/amp/2020/03/26/l-esercito-russo-in-aiuto-dei-medici-italiani"
+  }
+]

@@ -1,5 +1,7 @@
 # Bulletin videos fetcher
 
+Downloads all the videos from a video bulletin web page.
+
 ## Prerequisites
 
 - [nvm](https://github.com/nvm-sh/nvm)

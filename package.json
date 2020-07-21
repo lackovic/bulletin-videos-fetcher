@@ -4,7 +4,7 @@
   "description": "Euronews bulletin crawler",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node fetch.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,11 @@
   },
   "homepage": "https://github.com/lackovic/euronews#readme",
   "dependencies": {
-    "zombie": "^6.1.4"
+    "boxen": "^4.2.0",
+    "dotenv": "^8.2.0",
+    "fs": "0.0.1-security",
+    "node-fetch": "^2.6.0",
+    "youtube-dl": "^3.0.2"
   },
   "devDependencies": {
     "husky": "^4.2.3",

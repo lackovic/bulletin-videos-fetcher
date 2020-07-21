@@ -1,11 +1,25 @@
-# Euronews bulletin crawler
+# Bulletin videos fetcher
 
-## Headless Browsers tools
+## Prerequisites
 
-- https://github.com/puppeteer/puppeteer
+- [nvm](https://github.com/nvm-sh/nvm)
 
-- https://medium.com/@designman/building-a-performant-web-scraper-in-node-js-5f4449674163
+## Istall
 
-## Endpoint
+1. Copy `.env.tpl` to `.env`
 
-- https://it.euronews.com/api/articles.json?id=1059120
+1. Edit `.env` and enter the bulletin URL
+
+1. Run:
+
+   ```sh
+   nvm install
+   nvm use
+   npm install
+   ```
+
+## Run
+
+```sh
+npm start
+```

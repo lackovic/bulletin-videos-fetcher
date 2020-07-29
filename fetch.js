@@ -10,13 +10,15 @@ console.log(
 );
 
 const download = (item) => {
-  const videoJson = item.videos.filter((v) => (v.quality = "hd"))[1];
-  const videoUrl = videoJson.youtubeId ?? videoJson.url;
-  const video = youtubedl(videoUrl);
-  video.on("info", function (info) {
-    console.log(`Downloading ${info._filename} (size ${info.size})`);
-  });
-  video.pipe(fs.createWriteStream(`${item.id}.mp4`));
+  if (item.videos && item.videos > 0) {
+    const videoJson = item.videos.filter((v) => (v.quality = "hd"))[1];
+    const videoUrl = videoJson.youtubeId ?? videoJson.url;
+    const video = youtubedl(videoUrl);
+    video.on("info", function (info) {
+      console.log(`Downloading ${info._filename} (size ${info.size})`);
+    });
+    video.pipe(fs.createWriteStream(`${item.id}.mp4`));
+  }
 };
 
 (async () => {

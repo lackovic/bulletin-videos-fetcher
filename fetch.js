@@ -10,7 +10,7 @@ console.log(
 );
 
 const download = (item) => {
-  if (item.videos && item.videos > 0) {
+  if (item.videos && item.videos.length > 0) {
     const videoJson = item.videos.filter((v) => (v.quality = "hd"))[1];
     const videoUrl = videoJson.youtubeId ?? videoJson.url;
     const video = youtubedl(videoUrl);

@@ -25,5 +25,19 @@ const download = (item) => {
   const dataContent = JSON.parse(
     html.match(/data-content="(.*)"/)[1].replace(/&quot;/g, '"')
   );
-  dataContent.forEach((item) => download(item));
+  try {
+    dataContent.forEach((item) => download(item));
+  } catch (error) {
+    const now = new Date().toISOString().replace(/:/g, ".").slice(0, -5);
+    console.log(
+      `ERROR: ${error.message}, check the stacktrace.log file for details`
+    );
+    fs.writeFile(`${now}-stacktrace.log`, error.stack, () => {});
+    fs.writeFile(`${now}-page.html`, html, () => {});
+    fs.writeFile(
+      `${now}-data-content.json`,
+      JSON.stringify(dataContent, null, "  "),
+      () => {}
+    );
+  }
 })();

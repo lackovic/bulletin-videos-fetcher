@@ -18,6 +18,14 @@ const download = (item) => {
       console.log(`Downloading ${info._filename} (size ${info.size})`);
     });
     video.pipe(fs.createWriteStream(`${item.id}.mp4`));
+  } else {
+    console.log(`No videos found for "${item.title}" - see item.log file`);
+    const now = new Date().toISOString().replace(/:/g, ".").slice(0, -5);
+    fs.writeFile(
+      `${now}-item.json`,
+      JSON.stringify(item, null, "  "),
+      () => {}
+    );
   }
 };
 
@@ -31,9 +39,7 @@ const download = (item) => {
     dataContent.forEach((item) => download(item));
   } catch (error) {
     const now = new Date().toISOString().replace(/:/g, ".").slice(0, -5);
-    console.log(
-      `ERROR: ${error.message}, check the stacktrace.log file for details`
-    );
+    console.log(`ERROR: ${error.message} - see stacktrace.log file`);
     fs.writeFile(`${now}-stacktrace.log`, error.stack, () => {});
     fs.writeFile(`${now}-page.html`, html, () => {});
     fs.writeFile(

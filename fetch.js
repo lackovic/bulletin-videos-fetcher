@@ -9,7 +9,7 @@ console.log(
   boxen(`Fetching videos from ${url}`, { padding: 1, borderStyle: "round" })
 );
 
-const download = (item) => {
+const download = (item, dir) => {
   if (item.videos && item.videos.length > 0) {
     const videoJson = item.videos.filter((v) => (v.quality = "hd"))[1];
     const videoUrl = videoJson.youtubeId ?? videoJson.url;
@@ -17,7 +17,7 @@ const download = (item) => {
     video.on("info", function (info) {
       console.log(`Downloading ${info._filename} (size ${info.size})`);
     });
-    video.pipe(fs.createWriteStream(`${item.id}.mp4`));
+    video.pipe(fs.createWriteStream(`${dir}/${item.id}.mp4`));
   } else {
     console.log(`No videos found for "${item.title}" - see item.log file`);
     const now = new Date().toISOString().replace(/:/g, ".").slice(0, -5);
@@ -35,8 +35,13 @@ const download = (item) => {
   const dataContent = JSON.parse(
     html.match(/data-content="(.*)"/)[1].replace(/&quot;/g, '"')
   );
+  const today = new Date().toISOString().replace(/:/g, ".").slice(0, -14);
+  var dir = `./${today}`;
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir);
+  }
   try {
-    dataContent.forEach((item) => download(item));
+    dataContent.forEach((item) => download(item, dir));
   } catch (error) {
     const now = new Date().toISOString().replace(/:/g, ".").slice(0, -5);
     console.log(`ERROR: ${error.message} - see stacktrace.log file`);

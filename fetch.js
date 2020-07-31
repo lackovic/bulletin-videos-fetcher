@@ -17,7 +17,7 @@ const download = (item, dir) => {
     video.on("info", function (info) {
       console.log(`Downloading ${info._filename} (size ${info.size})`);
     });
-    video.pipe(fs.createWriteStream(`${dir}/${item.id}.mp4`));
+    video.pipe(fs.createWriteStream(`${dir}/${item.url}.mp4`));
   } else {
     console.log(`No videos found for "${item.title}" - see item.log file`);
     const now = new Date().toISOString().replace(/:/g, ".").slice(0, -5);

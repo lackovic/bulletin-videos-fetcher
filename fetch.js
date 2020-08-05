@@ -40,6 +40,11 @@ const download = (item, dir) => {
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir);
   }
+  fs.writeFile(
+    `${dir}/data-content.json`,
+    JSON.stringify(dataContent, null, "  "),
+    () => {}
+  );
   try {
     dataContent.forEach((item) => download(item, dir));
   } catch (error) {
@@ -47,10 +52,5 @@ const download = (item, dir) => {
     console.log(`ERROR: ${error.message} - see stacktrace.log file`);
     fs.writeFile(`${now}-stacktrace.log`, error.stack, () => {});
     fs.writeFile(`${now}-page.html`, html, () => {});
-    fs.writeFile(
-      `${now}-data-content.json`,
-      JSON.stringify(dataContent, null, "  "),
-      () => {}
-    );
   }
 })();

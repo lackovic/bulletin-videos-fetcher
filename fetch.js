@@ -45,12 +45,12 @@ const download = (item, dir) => {
     JSON.stringify(dataContent, null, "  "),
     () => {}
   );
+  fs.writeFile(`${dir}/page.html`, html, () => {});
   try {
     dataContent.forEach((item) => download(item, dir));
   } catch (error) {
     const now = new Date().toISOString().replace(/:/g, ".").slice(0, -5);
     console.log(`ERROR: ${error.message} - see stacktrace.log file`);
     fs.writeFile(`${now}-stacktrace.log`, error.stack, () => {});
-    fs.writeFile(`${now}-page.html`, html, () => {});
   }
 })();

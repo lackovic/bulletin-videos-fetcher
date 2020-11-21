@@ -5,11 +5,16 @@ const youtubedl = require("youtube-dl");
 const fs = require("fs");
 const boxen = require("boxen");
 
+const getBaseDir = () => {
+  const dir = process.env.BASE_DIR.replace(/\//g, path.sep).replace(
+    /\\/g,
+    path.sep
+  );
+  return fs.existsSync(dir) ? dir : ".";
+};
+
 const url = process.env.URL;
-const baseDir = process.env.BASE_DIR.replace(/\//g, path.sep).replace(
-  /\\/g,
-  path.sep
-);
+const baseDir = getBaseDir();
 const today = new Date().toISOString().replace(/:/g, ".").slice(0, -14);
 const videosDir = `${baseDir}${path.sep}${today}${path.sep}`;
 const debugDir = `${videosDir}debug${path.sep}`;

@@ -4,7 +4,7 @@
   "description": "Euronews bulletin crawler",
   "main": "index.js",
   "scripts": {
-    "start": "node fetch.js"
+    "start": "node --trace-warnings fetch.js"
   },
   "repository": {
     "type": "git",

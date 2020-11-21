@@ -3,6 +3,7 @@ const fetch = require("node-fetch");
 const youtubedl = require("youtube-dl");
 const fs = require("fs");
 const url = process.env.URL;
+const baseDir = process.env.DOWNLOAD_DIRECTORY;
 const boxen = require("boxen");
 
 console.log(
@@ -41,7 +42,7 @@ function capitalize(s) {
     html.match(/data-content="(.*)"/)[1].replace(/&quot;/g, '"')
   );
   const today = new Date().toISOString().replace(/:/g, ".").slice(0, -14);
-  var dir = `./${today}`;
+  var dir = `${baseDir}/${today}`;
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir);
   }

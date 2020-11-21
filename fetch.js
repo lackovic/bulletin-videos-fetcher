@@ -15,7 +15,10 @@ const videosDir = `${baseDir}${path.sep}${today}${path.sep}`;
 const debugDir = `${videosDir}debug${path.sep}`;
 
 console.log(
-  boxen(`Fetching videos from ${url}`, { padding: 1, borderStyle: "round" })
+  boxen(`Fetching videos\nfrom = ${url}\nto = ${videosDir}`, {
+    padding: 1,
+    borderStyle: "round",
+  })
 );
 
 const download = (item) => {

@@ -47,15 +47,19 @@ function capitalize(s) {
   );
   const today = new Date().toISOString().replace(/:/g, ".").slice(0, -14);
   var dir = `${baseDir}${path.sep}${today}${path.sep}`;
+  var debugDir = `${dir}debug${path.sep}`;
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir);
+    fs.mkdirSync(debugDir);
+  } else if (!fs.existsSync(debugDir)) {
+    fs.mkdirSync(debugDir);
   }
   fs.writeFile(
-    `${dir}data-content.json`,
+    `${debugDir}data-content.json`,
     JSON.stringify(dataContent, null, "  "),
     () => {}
   );
-  fs.writeFile(`${dir}page.html`, html, () => {});
+  fs.writeFile(`${debugDir}page.html`, html, () => {});
   try {
     dataContent.forEach((item) => download(item, dir));
   } catch (error) {

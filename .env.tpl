@@ -1,2 +1,2 @@
 URL=https://xxxxxxxxxxxxxx/bulletin
-DOWNLOAD_DIRECTORY=C:\Users\Marco\Videos
+BASE_DIR=C:\Users\Marco\Videos

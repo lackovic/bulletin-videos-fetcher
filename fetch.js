@@ -6,7 +6,7 @@ const fs = require("fs");
 const boxen = require("boxen");
 
 const url = process.env.URL;
-const baseDir = process.env.DOWNLOAD_DIRECTORY.replace(/\//g, path.sep).replace(
+const baseDir = process.env.BASE_DIR.replace(/\//g, path.sep).replace(
   /\\/g,
   path.sep
 );

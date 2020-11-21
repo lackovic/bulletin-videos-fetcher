@@ -3,18 +3,22 @@ const path = require("path");
 const fetch = require("node-fetch");
 const youtubedl = require("youtube-dl");
 const fs = require("fs");
+const boxen = require("boxen");
+
 const url = process.env.URL;
 const baseDir = process.env.DOWNLOAD_DIRECTORY.replace(/\//g, path.sep).replace(
   /\\/g,
   path.sep
 );
-const boxen = require("boxen");
+const today = new Date().toISOString().replace(/:/g, ".").slice(0, -14);
+const videosDir = `${baseDir}${path.sep}${today}${path.sep}`;
+const debugDir = `${videosDir}debug${path.sep}`;
 
 console.log(
   boxen(`Fetching videos from ${url}`, { padding: 1, borderStyle: "round" })
 );
 
-const download = (item, dir) => {
+const download = (item) => {
   if (item.videos && item.videos.length > 0) {
     const videoJson = item.videos.filter((v) => (v.quality = "hd"))[1];
     const videoUrl = videoJson.youtubeId ?? videoJson.url;
@@ -23,7 +27,7 @@ const download = (item, dir) => {
     video.on("info", function (info) {
       console.log(`Downloading ${fileName} (size ${info.size})`);
     });
-    video.pipe(fs.createWriteStream(`${dir}${fileName}.mp4`));
+    video.pipe(fs.createWriteStream(`${videosDir}${fileName}.mp4`));
   } else {
     console.log(`No videos found for "${item.title}" - see item.log file`);
     const now = new Date().toISOString().replace(/:/g, ".").slice(0, -5);
@@ -45,11 +49,8 @@ function capitalize(s) {
   const dataContent = JSON.parse(
     html.match(/data-content="(.*)"/)[1].replace(/&quot;/g, '"')
   );
-  const today = new Date().toISOString().replace(/:/g, ".").slice(0, -14);
-  var dir = `${baseDir}${path.sep}${today}${path.sep}`;
-  var debugDir = `${dir}debug${path.sep}`;
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir);
+  if (!fs.existsSync(videosDir)) {
+    fs.mkdirSync(videosDir);
     fs.mkdirSync(debugDir);
   } else if (!fs.existsSync(debugDir)) {
     fs.mkdirSync(debugDir);
@@ -61,7 +62,7 @@ function capitalize(s) {
   );
   fs.writeFile(`${debugDir}page.html`, html, () => {});
   try {
-    dataContent.forEach((item) => download(item, dir));
+    dataContent.forEach((item) => download(item));
   } catch (error) {
     const now = new Date().toISOString().replace(/:/g, ".").slice(0, -5);
     console.log(`ERROR: ${error.message} - see stacktrace.log file`);

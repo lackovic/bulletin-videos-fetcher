@@ -42,9 +42,9 @@ const download = (item) => {
   }
 };
 
-function capitalize(s) {
+const capitalize = (s) => {
   return s[0].toUpperCase() + s.slice(1);
-}
+};
 
 (async () => {
   const response = await fetch(url);

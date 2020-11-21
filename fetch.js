@@ -1,9 +1,13 @@
 require("dotenv").config();
+const path = require("path");
 const fetch = require("node-fetch");
 const youtubedl = require("youtube-dl");
 const fs = require("fs");
 const url = process.env.URL;
-const baseDir = process.env.DOWNLOAD_DIRECTORY;
+const baseDir = process.env.DOWNLOAD_DIRECTORY.replace(/\//g, path.sep).replace(
+  /\\/g,
+  path.sep
+);
 const boxen = require("boxen");
 
 console.log(
@@ -19,7 +23,7 @@ const download = (item, dir) => {
     video.on("info", function (info) {
       console.log(`Downloading ${fileName} (size ${info.size})`);
     });
-    video.pipe(fs.createWriteStream(`${dir}/${fileName}.mp4`));
+    video.pipe(fs.createWriteStream(`${dir}${fileName}.mp4`));
   } else {
     console.log(`No videos found for "${item.title}" - see item.log file`);
     const now = new Date().toISOString().replace(/:/g, ".").slice(0, -5);
@@ -42,16 +46,16 @@ function capitalize(s) {
     html.match(/data-content="(.*)"/)[1].replace(/&quot;/g, '"')
   );
   const today = new Date().toISOString().replace(/:/g, ".").slice(0, -14);
-  var dir = `${baseDir}/${today}`;
+  var dir = `${baseDir}${path.sep}${today}${path.sep}`;
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir);
   }
   fs.writeFile(
-    `${dir}/data-content.json`,
+    `${dir}data-content.json`,
     JSON.stringify(dataContent, null, "  "),
     () => {}
   );
-  fs.writeFile(`${dir}/page.html`, html, () => {});
+  fs.writeFile(`${dir}page.html`, html, () => {});
   try {
     dataContent.forEach((item) => download(item, dir));
   } catch (error) {

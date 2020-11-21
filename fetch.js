@@ -14,10 +14,11 @@ const download = (item, dir) => {
     const videoJson = item.videos.filter((v) => (v.quality = "hd"))[1];
     const videoUrl = videoJson.youtubeId ?? videoJson.url;
     const video = youtubedl(videoUrl);
+    const fileName = capitalize(item.url.replace(/-/g, " "));
     video.on("info", function (info) {
-      console.log(`Downloading ${info._filename} (size ${info.size})`);
+      console.log(`Downloading ${fileName} (size ${info.size})`);
     });
-    video.pipe(fs.createWriteStream(`${dir}/${item.url}.mp4`));
+    video.pipe(fs.createWriteStream(`${dir}/${fileName}.mp4`));
   } else {
     console.log(`No videos found for "${item.title}" - see item.log file`);
     const now = new Date().toISOString().replace(/:/g, ".").slice(0, -5);
@@ -28,6 +29,10 @@ const download = (item, dir) => {
     );
   }
 };
+
+function capitalize(s) {
+  return s[0].toUpperCase() + s.slice(1);
+}
 
 (async () => {
   const response = await fetch(url);

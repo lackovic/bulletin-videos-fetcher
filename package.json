@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/lackovic/euronews#readme",
   "dependencies": {
-    "boxen": "^5.0.0",
+    "boxen": "^7.0.0",
     "dotenv": "^16.0.1",
     "fs": "0.0.1-security",
     "node-fetch": "^3.2.6",

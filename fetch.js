@@ -31,12 +31,11 @@ const download = (item) => {
   if (item.videos && item.videos.length > 0) {
     const videoJson = item.videos.filter((v) => (v.quality = "hd"))[1];
     const videoUrl = videoJson.youtubeId ?? videoJson.url;
-    const video = youtubedl(videoUrl);
     const fileName = capitalize(item.url.replace(/-/g, " "));
-    video.on("info", function (info) {
-      console.log(`Downloading ${fileName} (size ${info.size})`);
-    });
-    video.pipe(fs.createWriteStream(`${videosDir}${fileName}.mp4`));
+    youtubedl(videoUrl, {
+      output: `${videosDir}${fileName}.mp4`,
+      referer: videoUrl
+    }).then(output => console.log(output));
   } else {
     console.log(`No videos found for "${item.title}" - see item.log file`);
     const now = new Date().toISOString().replace(/:/g, ".").slice(0, -5);

@@ -25,3 +25,10 @@ Downloads all the videos from a video bulletin web page.
 ```sh
 npm start
 ```
+
+## Upgrade all dependencies to their latest major version
+
+```bash
+npm i -g npm-check-updates
+ncu -u
+```

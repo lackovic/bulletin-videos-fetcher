@@ -1,32 +1,33 @@
 {
-  "name": "euronews",
+  "name": "bulletin-videos-fetcher",
   "version": "1.0.0",
-  "description": "Euronews bulletin crawler",
+  "description": "Bulletin videos fetcher",
   "main": "index.js",
   "scripts": {
     "start": "node --trace-warnings fetch.js"
   },
+  "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lackovic/euronews.git"
+    "url": "git+https://github.com/lackovic/bulletin-videos-fetcher.git"
   },
   "author": "Marco Lackovic",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lackovic/euronews/issues"
+    "url": "https://github.com/lackovic/bulletin-videos-fetcher/issues"
   },
-  "homepage": "https://github.com/lackovic/euronews#readme",
+  "homepage": "https://github.com/lackovic/bulletin-videos-fetcher#readme",
   "dependencies": {
     "boxen": "^7.0.0",
     "dotenv": "^16.0.1",
     "fs": "0.0.1-security",
     "node-fetch": "^3.2.6",
-    "youtube-dl": "^3.5.0"
+    "youtube-dl-exec": "^2.0.13"
   },
   "devDependencies": {
     "husky": "^8.0.1",
-    "prettier": "2.2.1",
-    "pretty-quick": "^3.1.0"
+    "prettier": "2.7.1",
+    "pretty-quick": "^3.1.3"
   },
   "husky": {
     "hooks": {

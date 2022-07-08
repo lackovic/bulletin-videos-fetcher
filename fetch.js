@@ -1,9 +1,10 @@
-require("dotenv").config();
-const path = require("path");
-const fetch = require("node-fetch");
-const youtubedl = require("youtube-dl");
-const fs = require("fs");
-const boxen = require("boxen");
+import * as dotenv from 'dotenv';
+dotenv.config();
+import path from 'path';
+import fetch from 'node-fetch';
+import youtubedl from 'youtube-dl-exec';
+import fs from 'fs';
+import boxen from 'boxen';
 
 const getBaseDir = () => {
   const dir = process.env.BASE_DIR.replace(/\//g, path.sep).replace(

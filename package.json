@@ -21,7 +21,7 @@
     "dotenv": "^16.0.1",
     "fs": "0.0.1-security",
     "node-fetch": "^3.2.6",
-    "youtube-dl": "^3.0.2"
+    "youtube-dl": "^3.5.0"
   },
   "devDependencies": {
     "husky": "^8.0.1",

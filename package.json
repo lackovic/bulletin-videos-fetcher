@@ -17,14 +17,14 @@
   },
   "homepage": "https://github.com/lackovic/euronews#readme",
   "dependencies": {
-    "boxen": "^5.0.0",
-    "dotenv": "^8.2.0",
+    "boxen": "^7.0.0",
+    "dotenv": "^16.0.1",
     "fs": "0.0.1-security",
-    "node-fetch": "^3.1.1",
-    "youtube-dl": "^3.0.2"
+    "node-fetch": "^3.2.6",
+    "youtube-dl": "^3.5.0"
   },
   "devDependencies": {
-    "husky": "^4.3.6",
+    "husky": "^8.0.1",
     "prettier": "2.2.1",
     "pretty-quick": "^3.1.0"
   },

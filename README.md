@@ -4,7 +4,8 @@ Downloads all the videos from a video bulletin web page.
 
 ## Prerequisites
 
-- [nvm](https://github.com/nvm-sh/nvm)
+- [Fast Node Manager](https://github.com/Schniz/fnm)
+- [Setup your shell profile](https://github.com/Schniz/fnm#shell-setup)
 
 ## Istall
 
@@ -15,8 +16,6 @@ Downloads all the videos from a video bulletin web page.
 1. Run:
 
    ```sh
-   nvm install
-   nvm use
    npm install
    ```
 

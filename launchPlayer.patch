@@ -1,0 +1,134 @@
+diff --git a/.env.tpl b/.env.tpl
+index 66f4d79..20e9e22 100644
+--- a/.env.tpl
++++ b/.env.tpl
+@@ -1,2 +1,4 @@
+ URL=https://xxxxxxxxxxxxxx/bulletin
+ BASE_DIR=C:\Users\Marco\Videos
++PLAYER_PATH=C:\Program Files (x86)\K-Lite Codec Pack\MPC-HC64\
++PLAYER_EXEC=mpc-hc64.exe
+diff --git a/README.md b/README.md
+index 896e55d..8e0c26e 100644
+--- a/README.md
++++ b/README.md
+@@ -10,7 +10,13 @@ Downloads all the videos from a video bulletin web page.
+ 
+ 1. Copy `.env.tpl` to `.env`
+ 
+-1. Edit `.env` and enter the bulletin URL
++1. Edit `.env` and change the variables according to your needs:
++
++   - URL: the URL of the page of the bulletin videos
++
++   - BASE_DIR: the path to the base folder where the videos will be downloaded
++
++   - PLAYER_PATH: the path to the video player of your choice with its arguments
+ 
+ 1. Run:
+ 
+diff --git a/fetch.js b/fetch.js
+index cdbf9b1..aa2f949 100644
+--- a/fetch.js
++++ b/fetch.js
+@@ -1,4 +1,5 @@
+ require("dotenv").config();
++const { spawn } = require("child_process");
+ const path = require("path");
+ const fetch = require("node-fetch");
+ const youtubedl = require("youtube-dl");
+@@ -70,10 +71,11 @@ const capitalize = (s) => {
+   );
+   fs.writeFile(`${debugDir}page.html`, html, () => {});
+   try {
+-    dataContent.forEach((item) => download(item));
++    await dataContent.asyncForEach((item) => download(item));
+   } catch (error) {
+     const now = new Date().toISOString().replace(/:/g, ".").slice(0, -5);
+     console.log(`ERROR: ${error.message} - see stacktrace.log file`);
+     fs.writeFile(`${now}-stacktrace.log`, error.stack, () => {});
+   }
++  spawn(process.env.PLAYER_EXEC, ["/fullscreen", videosDir], { cwd: process.env.PLAYER_PATH });
+ })();
+diff --git a/package-lock.json b/package-lock.json
+index 4dffdb9..86999f2 100644
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -61,13 +61,13 @@
+         },
+         "color-name": {
+           "version": "1.1.3",
+-          "resolved": "https://registry.npmjs.org/color-name/-/color-name-1.1.3.tgz",
++          "resolved": "https://artifactory6.grabcad.net:443/artifactory/api/npm/npm-repo/color-name/-/color-name-1.1.3.tgz",
+           "integrity": "sha1-p9BVi9icQveV3UIyj3QIMcpTvCU=",
+           "dev": true
+         },
+         "has-flag": {
+           "version": "3.0.0",
+-          "resolved": "https://registry.npmjs.org/has-flag/-/has-flag-3.0.0.tgz",
++          "resolved": "https://artifactory6.grabcad.net:443/artifactory/api/npm/npm-repo/has-flag/-/has-flag-3.0.0.tgz",
+           "integrity": "sha1-tdRU3CGZriJWmfNGfloH87lVuv0=",
+           "dev": true
+         },
+@@ -186,7 +186,7 @@
+     },
+     "balanced-match": {
+       "version": "1.0.0",
+-      "resolved": "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.0.tgz",
++      "resolved": "https://artifactory6.grabcad.net:443/artifactory/api/npm/npm-repo/balanced-match/-/balanced-match-1.0.0.tgz",
+       "integrity": "sha1-ibTRmasr7kneFk6gK4nORi1xt2c=",
+       "dev": true
+     },
+@@ -288,7 +288,7 @@
+     },
+     "concat-map": {
+       "version": "0.0.1",
+-      "resolved": "https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz",
++      "resolved": "https://artifactory6.grabcad.net:443/artifactory/api/npm/npm-repo/concat-map/-/concat-map-0.0.1.tgz",
+       "integrity": "sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=",
+       "dev": true
+     },
+@@ -379,7 +379,7 @@
+     },
+     "escape-string-regexp": {
+       "version": "1.0.5",
+-      "resolved": "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz",
++      "resolved": "https://artifactory6.grabcad.net:443/artifactory/api/npm/npm-repo/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz",
+       "integrity": "sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=",
+       "dev": true
+     },
+@@ -561,7 +561,7 @@
+     },
+     "is-arrayish": {
+       "version": "0.2.1",
+-      "resolved": "https://registry.npmjs.org/is-arrayish/-/is-arrayish-0.2.1.tgz",
++      "resolved": "https://artifactory6.grabcad.net:443/artifactory/api/npm/npm-repo/is-arrayish/-/is-arrayish-0.2.1.tgz",
+       "integrity": "sha1-d8mYQFJ6qOyxqLppe4BkWnqSap0=",
+       "dev": true
+     },
+@@ -635,7 +635,7 @@
+     },
+     "lines-and-columns": {
+       "version": "1.1.6",
+-      "resolved": "https://registry.npmjs.org/lines-and-columns/-/lines-and-columns-1.1.6.tgz",
++      "resolved": "https://artifactory6.grabcad.net:443/artifactory/api/npm/npm-repo/lines-and-columns/-/lines-and-columns-1.1.6.tgz",
+       "integrity": "sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=",
+       "dev": true
+     },
+@@ -949,7 +949,7 @@
+     },
+     "semver-compare": {
+       "version": "1.0.0",
+-      "resolved": "https://registry.npmjs.org/semver-compare/-/semver-compare-1.0.0.tgz",
++      "resolved": "https://artifactory6.grabcad.net:443/artifactory/api/npm/npm-repo/semver-compare/-/semver-compare-1.0.0.tgz",
+       "integrity": "sha1-De4hahyUGrN+nvsXiPavxf9VN/w=",
+       "dev": true
+     },
+@@ -1133,7 +1133,7 @@
+     },
+     "which-pm-runs": {
+       "version": "1.0.0",
+-      "resolved": "https://registry.npmjs.org/which-pm-runs/-/which-pm-runs-1.0.0.tgz",
++      "resolved": "https://artifactory6.grabcad.net:443/artifactory/api/npm/npm-repo/which-pm-runs/-/which-pm-runs-1.0.0.tgz",
+       "integrity": "sha1-Zws6+8VS4LVd9rd4DKdGFfI60cs=",
+       "dev": true
+     },

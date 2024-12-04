@@ -19,7 +19,7 @@
   "homepage": "https://github.com/lackovic/bulletin-videos-fetcher#readme",
   "dependencies": {
     "boxen": "^8.0.1",
-    "dotenv": "^16.4.5",
+    "dotenv": "^16.4.7",
     "fs": "0.0.1-security",
     "node-fetch": "^3.3.2",
     "youtube-dl-exec": "^3.0.10"

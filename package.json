@@ -22,7 +22,7 @@
     "dotenv": "^16.4.7",
     "fs": "0.0.1-security",
     "node-fetch": "^3.3.2",
-    "youtube-dl-exec": "^3.0.12"
+    "youtube-dl-exec": "^3.0.13"
   },
   "devDependencies": {
     "husky": "^9.1.7",
